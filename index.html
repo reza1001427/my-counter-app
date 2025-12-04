@@ -3,94 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React Counters Base</title>
+    <title>Counter App</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- 1. The Styles (CSS) -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-        }
-        .buttons-wrapper {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 120px;
-        }
-        button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:active { transform: scale(0.95); }
-        .btn-like { background-color: #4CAF50; }
-        .btn-dislike { background-color: #f44336; }
-        .btn-star { background-color: #FF9800; }
-        .count-text { font-size: 18px; margin-top: 10px; color: #333; }
-    </style>
-
-    <!-- 2. The Libraries (React, ReactDOM, Babel) -->
+    <!-- React and Babel CDNs -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
 
-    <!-- 3. The Root Div (Where React will live) -->
+    <!-- The container where React will inject the app -->
     <div id="root"></div>
 
-    <!-- 4. The React Logic (JSX) -->
-    <script type="text/babel">
-        
-        function App() {
-            // Note: In this standalone version, we use React.useState instead of just useState
-            const [likes, setLikes] = React.useState(0);
-            const [dislikes, setDislikes] = React.useState(0);
-            const [stars, setStars] = React.useState(0);
+    <!-- Link to your JS file -->
+    <!-- type="text/babel" is crucial so Babel knows to translate the JSX inside code.js -->
+    <script type="text/babel" src="code.js"></script>
 
-            return (
-                <div className="container">
-                    <h1>React without Build Tools</h1>
-                    
-                    <div className="buttons-wrapper">
-                        
-                        {/* Like Button */}
-                        <div className="card">
-                            <button className="btn-like" onClick={() => setLikes(likes + 1)}>
-                                Like 👍
-                            </button>
-                            <div className="count-text">{likes}</div>
-                        </div>
-
-                        {/* Dislike Button */}
-                        <div className="card">
-                            <button className="btn-dislike" onClick={() => setDislikes(dislikes + 1)}>
-                                Dislike 👎
-                            </button>
-                            <div className="count-text">{dislikes}</div>
-                        </div>
-
-                        {/* Star Button */}
-                        <div className="card">
-                            <button className="btn-star" onClick={() => setStars(stars + 1)}>
-                                Star 🌟
-                            </button>
-                            <div class
+</body>
+</html>
